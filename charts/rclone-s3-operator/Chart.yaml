@@ -1,0 +1,6 @@
+apiVersion: v2
+name: rclone-s3-operator
+description: Kubernetes operator that provisions rclone serve s3 gateways.
+type: application
+version: 0.1.0
+appVersion: 0.1.0

@@ -1,0 +1,15 @@
+{{- if .Values.metricsService.enabled }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "rclone-s3-operator.fullname" . }}-metrics
+  labels:
+    {{- include "rclone-s3-operator.labels" . | nindent 4 }}
+spec:
+  selector:
+    {{- include "rclone-s3-operator.selectorLabels" . | nindent 4 }}
+  ports:
+    - name: metrics
+      port: {{ .Values.metricsService.port }}
+      targetPort: metrics
+{{- end }}

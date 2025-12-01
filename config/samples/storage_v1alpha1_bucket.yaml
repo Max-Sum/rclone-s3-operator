@@ -1,0 +1,13 @@
+apiVersion: storage.max.io/v1alpha1
+kind: Bucket
+metadata:
+  name: example-bucket
+  namespace: rclone-s3-operator
+spec:
+  remote: minio
+  port: 9000
+  serviceType: ClusterIP
+  replicas: 1
+  readOnly: false
+  extraArgs:
+    - --vfs-cache-mode full

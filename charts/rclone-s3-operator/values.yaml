@@ -1,0 +1,25 @@
+image:
+  repository: ghcr.io/example/rclone-s3-operator
+  tag: latest
+  pullPolicy: IfNotPresent
+
+manager:
+  replicaCount: 1
+  args: []
+  resources: {}
+
+serviceAccount:
+  create: true
+  name: ""
+
+rbac:
+  create: true
+
+metricsService:
+  enabled: true
+  port: 8080
+
+rcloneConfig:
+  enabled: false
+  name: rclone-secret
+  data: "" # Inline rclone.conf content
